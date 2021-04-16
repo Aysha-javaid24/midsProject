@@ -32,7 +32,6 @@ public class Menu extends javax.swing.JFrame {
         L1 = new javax.swing.JLabel();
         L2 = new javax.swing.JLabel();
         B1 = new javax.swing.JButton();
-        B2 = new javax.swing.JButton();
         B3 = new javax.swing.JButton();
         B4 = new javax.swing.JButton();
         B5 = new javax.swing.JButton();
@@ -61,13 +60,6 @@ public class Menu extends javax.swing.JFrame {
         B1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 B1ActionPerformed(evt);
-            }
-        });
-
-        B2.setText("Delete Employees");
-        B2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B2ActionPerformed(evt);
             }
         });
 
@@ -102,7 +94,6 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(61, 61, 61)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(B3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(B2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(B4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(B1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(B5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -122,13 +113,11 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(L2)
                 .addGap(20, 20, 20)
                 .addComponent(B1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(B2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(B3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(B4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(11, 11, 11)
                 .addComponent(B5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(B6)
@@ -169,12 +158,6 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_B1ActionPerformed
 
-    private void B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2ActionPerformed
-        // TODO add your handling code here:
-        ViewList list=new ViewList();
-        list.show();
-    }//GEN-LAST:event_B2ActionPerformed
-
     private void B3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B3ActionPerformed
         // TODO add your handling code here:
         Add_Access access=new Add_Access();
@@ -183,8 +166,8 @@ public class Menu extends javax.swing.JFrame {
 
     private void B4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B4ActionPerformed
         // TODO add your handling code here:
-        UpdatedList list2=new UpdatedList();
-        list2.show();
+        
+        
     }//GEN-LAST:event_B4ActionPerformed
 
     /**
@@ -224,7 +207,6 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B1;
-    private javax.swing.JButton B2;
     private javax.swing.JButton B3;
     private javax.swing.JButton B4;
     private javax.swing.JButton B5;

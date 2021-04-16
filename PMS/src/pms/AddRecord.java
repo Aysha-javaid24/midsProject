@@ -5,6 +5,8 @@
  */
 package pms;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -161,12 +163,13 @@ public class AddRecord extends javax.swing.JFrame {
             gender="Female";
         }
         Employee employee=new Employee();
+        List<Employee> list=new ArrayList<Employee>();
         boolean flag=false;
         flag=employee.setName(name);
         flag=employee.setEmail(email);
         flag=employee.setContactNum(number);
         employee.Gender=gender;
-        
+        list.add(employee);
         JOptionPane.showMessageDialog(this, "Record Added Successfully!");
         Menu menu=new Menu();
         menu.show();
