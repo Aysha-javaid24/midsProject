@@ -5,6 +5,8 @@
  */
 package pms;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -134,10 +136,11 @@ public class Add_Access extends javax.swing.JFrame {
         String item=T1.getText();
         String no=T2.getText();
         String date=T3.getText();
-        
+        Accessories access=new Accessories();
+        List<Accessories> list=new ArrayList<Accessories>();
+        list.add(access);
         JOptionPane.showMessageDialog(this, "Issued Successories Added Successfully!");
-        Menu menu=new Menu();
-        menu.show();
+        dispose();
     }//GEN-LAST:event_B1ActionPerformed
 
     /**

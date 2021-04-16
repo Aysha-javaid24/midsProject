@@ -84,12 +84,15 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="B3" alignment="0" max="32767" attributes="0"/>
-                              <Component id="B4" alignment="0" max="32767" attributes="0"/>
-                              <Component id="B1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="B5" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="B6" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="B2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="B3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="B1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="B4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="B5" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -112,14 +115,16 @@
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="B1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="B3" min="-2" max="-2" attributes="0"/>
+                  <Component id="B2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="B4" min="-2" max="-2" attributes="0"/>
+                  <Component id="B3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                  <Component id="B4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="B5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="B6" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="43" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -143,9 +148,17 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B1ActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JButton" name="B2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Add accessory"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B2ActionPerformed"/>
+          </Events>
+        </Component>
         <Component class="javax.swing.JButton" name="B3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Search Employee"/>
+            <Property name="text" type="java.lang.String" value="UpdateAccessCount"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B3ActionPerformed"/>
@@ -153,21 +166,21 @@
         </Component>
         <Component class="javax.swing.JButton" name="B4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="UpdateAccessCount"/>
+            <Property name="text" type="java.lang.String" value="Issue To"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B4ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="B5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Issue To"/>
+            <Property name="text" type="java.lang.String" value="AgainUpdateCount"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="B6">
           <Properties>
-            <Property name="text" type="java.lang.String" value="AgainUpdateCount"/>
+            <Property name="text" type="java.lang.String" value="Receipt"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B6ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

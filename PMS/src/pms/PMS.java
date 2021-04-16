@@ -16,9 +16,9 @@ public class PMS {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       
-        logIn log=new logIn();
-        log.show();
+       logIn log=new logIn();
+       log.show();
+
     }
     
 }

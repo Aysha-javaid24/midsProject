@@ -9,8 +9,7 @@ package pms;
  *
  * @author aysha
  */
-public class Accessories {
-    public String Item;
-    public String noOfItem;
-    public String date;
+public class Receipt {
+    public String Name;
+    public String signature;
 }

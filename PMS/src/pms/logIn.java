@@ -35,8 +35,8 @@ public class logIn extends javax.swing.JFrame {
         L3 = new javax.swing.JLabel();
         L4 = new javax.swing.JLabel();
         T1 = new javax.swing.JTextField();
-        P1 = new javax.swing.JPasswordField();
         B1 = new javax.swing.JButton();
+        P1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,12 +52,6 @@ public class logIn extends javax.swing.JFrame {
         L3.setText("Name");
 
         L4.setText("Password");
-
-        P1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                P1ActionPerformed(evt);
-            }
-        });
 
         B1.setText("LogIn");
         B1.addActionListener(new java.awt.event.ActionListener() {
@@ -82,13 +76,13 @@ public class logIn extends javax.swing.JFrame {
                             .addComponent(L3))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(B1)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(T1)
-                                .addComponent(P1)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(L2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, Short.MAX_VALUE))))))
+                            .addComponent(T1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(B1)
+                                    .addComponent(L2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(P1))))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -133,15 +127,16 @@ public class logIn extends javax.swing.JFrame {
 
     private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "LogIn Successfully!");
-        Menu menu=new Menu();
-        menu.show();
+        String name=T1.getText();
+        String pwd=P1.getText();
+        if(name.equals("Admin")&&pwd.equals("0000"))
+        {
+            JOptionPane.showMessageDialog(this,"logIn successfully");
+            Menu menu=new Menu();
+            menu.show();
+        }
+        
     }//GEN-LAST:event_B1ActionPerformed
-
-    private void P1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_P1ActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_P1ActionPerformed
 
     /**
      * @param args the command line arguments

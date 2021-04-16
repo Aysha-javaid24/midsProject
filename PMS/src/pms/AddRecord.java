@@ -171,8 +171,7 @@ public class AddRecord extends javax.swing.JFrame {
         employee.Gender=gender;
         list.add(employee);
         JOptionPane.showMessageDialog(this, "Record Added Successfully!");
-        Menu menu=new Menu();
-        menu.show();
+        dispose();
     }//GEN-LAST:event_B1ActionPerformed
 
     private void RB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RB2ActionPerformed
