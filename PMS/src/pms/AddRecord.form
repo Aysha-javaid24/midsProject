@@ -26,7 +26,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="40" max="32767" attributes="0"/>
+              <EmptySpace pref="107" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -35,7 +35,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="51" max="32767" attributes="0"/>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -52,25 +52,33 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="L1" min="-2" pref="137" max="-2" attributes="0"/>
-                      <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="L5" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="L4" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="L2" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="L3" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="B1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="T1" alignment="0" pref="103" max="32767" attributes="0"/>
-                              <Component id="T2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="T3" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="RB1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="RB2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="B1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="T1" alignment="0" pref="103" max="32767" attributes="0"/>
+                                  <Component id="T2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="T3" alignment="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
+                      <Component id="L1" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="76" max="32767" attributes="0"/>
+                  <EmptySpace pref="87" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -78,8 +86,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                  <Component id="L1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="L1" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="L2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="T1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -89,14 +97,20 @@
                       <Component id="L3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="T2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="L4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="T3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RB1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RB2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="B1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -104,7 +118,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="L1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="   Add Record of Employee"/>
+            <Property name="text" type="java.lang.String" value="        Add Record of Employee"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="L2">
@@ -134,6 +148,24 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="L5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Gender"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RB1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Male"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RB2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Female"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RB2ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

@@ -3,22 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pms;
+package javaapplication12;
 
 /**
  *
  * @author aysha
  */
-public class PMS {
+public class JavaApplication12 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       
-        logIn log=new logIn();
-        log.show();
     }
     
 }

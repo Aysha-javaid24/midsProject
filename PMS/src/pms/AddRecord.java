@@ -38,12 +38,15 @@ public class AddRecord extends javax.swing.JFrame {
         T2 = new javax.swing.JTextField();
         T3 = new javax.swing.JTextField();
         B1 = new javax.swing.JButton();
+        L5 = new javax.swing.JLabel();
+        RB1 = new javax.swing.JRadioButton();
+        RB2 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(java.awt.Color.pink);
 
-        L1.setText("   Add Record of Employee");
+        L1.setText("        Add Record of Employee");
 
         L2.setText("Name");
 
@@ -58,32 +61,49 @@ public class AddRecord extends javax.swing.JFrame {
             }
         });
 
+        L5.setText("Gender");
+
+        RB1.setText("Male");
+
+        RB2.setText("Female");
+        RB2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RB2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(L1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(L5)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(L4)
                             .addComponent(L2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(L3, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(B1)
-                            .addComponent(T1, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-                            .addComponent(T2)
-                            .addComponent(T3))))
-                .addContainerGap(76, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(RB1)
+                                .addGap(18, 18, 18)
+                                .addComponent(RB2))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(B1)
+                                .addComponent(T1, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                                .addComponent(T2)
+                                .addComponent(T3))))
+                    .addComponent(L1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addComponent(L1)
+                .addComponent(L1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(L2)
@@ -96,9 +116,14 @@ public class AddRecord extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(L4)
                     .addComponent(T3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L5)
+                    .addComponent(RB1)
+                    .addComponent(RB2))
+                .addGap(25, 25, 25)
                 .addComponent(B1)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -108,25 +133,48 @@ public class AddRecord extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(81, 81, 81)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+   
     private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
         // TODO add your handling code here:
+        String name=T1.getText();
+        String email=T2.getText();
+        String number=T3.getText();
+        String gender="";
+        if(RB1.isSelected())
+        {
+            gender="Male";
+        }
+        else if(RB2.isSelected())
+        {
+            gender="Female";
+        }
+        Employee employee=new Employee();
+        boolean flag=false;
+        flag=employee.setName(name);
+        flag=employee.setEmail(email);
+        flag=employee.setContactNum(number);
+        employee.Gender=gender;
+        
         JOptionPane.showMessageDialog(this, "Record Added Successfully!");
         Menu menu=new Menu();
         menu.show();
     }//GEN-LAST:event_B1ActionPerformed
+
+    private void RB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RB2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RB2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,6 +217,9 @@ public class AddRecord extends javax.swing.JFrame {
     private javax.swing.JLabel L2;
     private javax.swing.JLabel L3;
     private javax.swing.JLabel L4;
+    private javax.swing.JLabel L5;
+    private javax.swing.JRadioButton RB1;
+    private javax.swing.JRadioButton RB2;
     private javax.swing.JTextField T1;
     private javax.swing.JTextField T2;
     private javax.swing.JTextField T3;

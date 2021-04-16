@@ -3,22 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pms;
+package libraryproject;
 
 /**
  *
  * @author aysha
  */
-public class PMS {
+public class LibraryProject {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       
-        logIn log=new logIn();
-        log.show();
+        Library l=new Library();
+        Book b=new Book();
+        Magazine m=new Magazine();
+        TechnicalBook t=new TechnicalBook();
     }
     
 }
