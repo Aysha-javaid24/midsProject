@@ -12,4 +12,5 @@ package pms;
 public class Receipt {
     public String Name;
     public String signature;
+    public String DateTime;
 }

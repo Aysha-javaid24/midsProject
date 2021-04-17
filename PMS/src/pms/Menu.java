@@ -184,7 +184,9 @@ public class Menu extends javax.swing.JFrame {
 
     private void B6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B6ActionPerformed
         // TODO add your handling code here:
-        String name=
+        ReceiptFrame receipt=new ReceiptFrame();
+        receipt.show();
+       
     }//GEN-LAST:event_B6ActionPerformed
 
     /**
