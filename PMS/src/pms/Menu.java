@@ -162,6 +162,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2ActionPerformed
         // TODO add your handling code here:
+        dispose();
                java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AccessMenu().setVisible(true);
@@ -171,6 +172,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void B6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B6ActionPerformed
         // TODO add your handling code here:
+        dispose();
         ReceiptFrame receipt=new ReceiptFrame();
         receipt.show();
        

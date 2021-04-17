@@ -12,10 +12,6 @@ package pms;
 public class Accessories {
     public String Item;
     public String noOfItem;
-    public Accessories(String item,String number)
-    {
-        this.Item=item;
-        this.noOfItem=number;
-    }
+
     
 }

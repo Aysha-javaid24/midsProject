@@ -5,6 +5,7 @@
  */
 package pms;
 
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -186,6 +187,18 @@ public class AddRecord extends javax.swing.JFrame {
         flag=employee.setContactNum(number);
         employee.Gender=gender;
         list.add(employee);
+        try
+        {
+            FileWriter f=new FileWriter("employee.txt",true);
+            f.write("Name"+name+"\n");
+            f.write("Email"+email+"\n");
+            f.write("Cell number"+number+"\n");
+            f.write("Gender"+gender+"\n\n\n");
+            f.close();
+        }catch(Exception ex)
+        {
+           JOptionPane.showMessageDialog(null,"Error");
+        }
         JOptionPane.showMessageDialog(this, "Record Added Successfully!");
         dispose();
     }//GEN-LAST:event_B1ActionPerformed

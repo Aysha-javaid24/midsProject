@@ -5,18 +5,11 @@
  */
 package pms;
 
-import java.io.File;
-import java.io.FileInputStream;
+
 import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JOptionPane;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.FileWriter;
+import java.util.*;
         
 
 /**
@@ -142,85 +135,24 @@ public class Add_Access extends javax.swing.JFrame {
 
     private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
         // TODO add your handling code here:
-        String item=T1.getText();
-        String no=T2.getText();
-        File file = new File("access.txt");
-        FileInputStream f = null; 
+        String a1=T1.getText();
+        String a2=T2.getText();
+        ArrayList<Accessories> list=new ArrayList<Accessories>();
+        Accessories a=new Accessories();
+        a.Item=a1;
+        a.noOfItem=a2;       
+        
         try
         {
-           f=new FileInputStream(file);
-        }catch(FileNotFoundException ex)
-                {
-                   JOptionPane.showMessageDialog(this,"File doesn't exist");
-                }
-        ObjectInputStream obj = null;
-         try 
-         {
-             obj = new ObjectInputStream(f);
-         }catch(IOException ex)
-         {
-             JOptionPane.showMessageDialog(this,"error");
-         }
-         List<Accessories> list=new ArrayList<Accessories>();
-         try{
-         while(true)
-         {
-             Accessories name=null;
-            
-             try {
-                 name=(Accessories)obj.readObject();
-             } catch (ClassNotFoundException ex) {
-                 Logger.getLogger(Add_Access.class.getName()).log(Level.SEVERE, null, ex);
-             }
-            
-            list.add(name);
-         }
-         }catch(IOException ex)
-         {
-             JOptionPane.showMessageDialog(this,"ERROR");
-         }
-        try {
-            f.close();
-        } catch (IOException ex) {
-            Logger.getLogger(Add_Access.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        String i=T1.getText();
-        String n=T2.getText();
-        if(i.equals("")&&n.equals(""))
+            FileWriter r=new FileWriter("access.txt",true);
+            r.write("name:"+a1+"\n");
+            r.write("No of Items"+a2+"\n\n\n");
+            r.close();
+        }catch(Exception ex)
         {
-            Accessories a=new Accessories(i,n);
-            list.add(a);
-            FileOutputStream f1=null;
-            try {
-                f1=new FileOutputStream(file);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(Add_Access.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            ObjectOutputStream obj1=null;
-            try {
-                obj1=new ObjectOutputStream(f1);
-            } catch (IOException ex) {
-                Logger.getLogger(Add_Access.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try
-            {
-            for(Accessories A:list)
-            {
-                obj1.writeObject(A);
-            }
-            }catch(IOException ex)
-            {
-                Logger.getLogger(Add_Access.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try {
-                f1.close();
-            } catch (IOException ex) {
-                Logger.getLogger(Add_Access.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            JOptionPane.showMessageDialog(null,"File not found");
         }
-
         
-        dispose();
     }//GEN-LAST:event_B1ActionPerformed
 
     private void B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2ActionPerformed
