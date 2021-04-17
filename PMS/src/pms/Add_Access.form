@@ -50,11 +50,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="B1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -71,10 +66,11 @@
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                              <Component id="L4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="B1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="T3" min="-2" pref="97" max="-2" attributes="0"/>
+                              <Component id="B2" min="-2" pref="84" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -101,13 +97,11 @@
                       <Component id="L3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="T2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="L4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="T3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="B1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="B2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="B1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="42" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -141,12 +135,13 @@
             <Property name="text" type="java.lang.String" value="ItemName"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="L4">
+        <Component class="javax.swing.JButton" name="B2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Receiving Date"/>
+            <Property name="text" type="java.lang.String" value="Back"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="T3">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B2ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

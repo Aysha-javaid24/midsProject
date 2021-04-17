@@ -39,8 +39,11 @@ public class ReceiptFrame extends javax.swing.JFrame {
         B1 = new javax.swing.JButton();
         L3 = new javax.swing.JLabel();
         T2 = new javax.swing.JTextField();
+        B2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        L2.setBackground(java.awt.Color.pink);
 
         jLabel1.setText("Name");
 
@@ -57,23 +60,36 @@ public class ReceiptFrame extends javax.swing.JFrame {
 
         L3.setText("Date Time");
 
+        B2.setText("Back");
+        B2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout L2Layout = new javax.swing.GroupLayout(L2);
         L2.setLayout(L2Layout);
         L2Layout.setHorizontalGroup(
             L2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(L2Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
                 .addGroup(L2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(L4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(L3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(L2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(B1)
-                    .addComponent(L1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(T1)
-                    .addComponent(T3)
-                    .addComponent(T2, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
+                    .addGroup(L2Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(L2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(L4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(L3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(L2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(L1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(T1)
+                            .addComponent(T3)
+                            .addComponent(T2, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)))
+                    .addGroup(L2Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(B1)
+                        .addGap(30, 30, 30)
+                        .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         L2Layout.setVerticalGroup(
@@ -93,12 +109,14 @@ public class ReceiptFrame extends javax.swing.JFrame {
                             .addComponent(T2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(21, 21, 21)
                         .addComponent(L4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, L2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                        .addComponent(T3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addComponent(B1)
+                        .addComponent(T3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(L2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(B1)
+                    .addComponent(B2))
                 .addContainerGap())
         );
 
@@ -132,6 +150,15 @@ public class ReceiptFrame extends javax.swing.JFrame {
         list.add(rec);
         dispose();
     }//GEN-LAST:event_B1ActionPerformed
+
+    private void B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2ActionPerformed
+        // TODO add your handling code here:
+                java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Menu().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_B2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,6 +197,7 @@ public class ReceiptFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B1;
+    private javax.swing.JButton B2;
     private javax.swing.JLabel L1;
     private javax.swing.JPanel L2;
     private javax.swing.JLabel L3;

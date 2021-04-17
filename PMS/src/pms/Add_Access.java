@@ -5,9 +5,19 @@
  */
 package pms;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+        
 
 /**
  *
@@ -38,8 +48,7 @@ public class Add_Access extends javax.swing.JFrame {
         T2 = new javax.swing.JTextField();
         B1 = new javax.swing.JButton();
         L2 = new javax.swing.JLabel();
-        L4 = new javax.swing.JLabel();
-        T3 = new javax.swing.JTextField();
+        B2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,16 +67,17 @@ public class Add_Access extends javax.swing.JFrame {
 
         L2.setText("ItemName");
 
-        L4.setText("Receiving Date");
+        B2.setText("Back");
+        B2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(B1)
-                .addGap(122, 122, 122))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,10 +91,11 @@ public class Add_Access extends javax.swing.JFrame {
                                 .addComponent(T1, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
                                 .addComponent(T2)))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGap(92, 92, 92)
-                            .addComponent(L4)
+                            .addGap(61, 61, 61)
+                            .addComponent(B1)
                             .addGap(18, 18, 18)
-                            .addComponent(T3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(13, 13, 13)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(136, 136, 136)
                         .addComponent(L1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -103,12 +114,10 @@ public class Add_Access extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(L3)
                     .addComponent(T2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(56, 56, 56)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(L4)
-                    .addComponent(T3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(B1)
+                    .addComponent(B1)
+                    .addComponent(B2))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -135,13 +144,93 @@ public class Add_Access extends javax.swing.JFrame {
         // TODO add your handling code here:
         String item=T1.getText();
         String no=T2.getText();
-        String date=T3.getText();
-        Accessories access=new Accessories();
-        List<Accessories> list=new ArrayList<Accessories>();
-        list.add(access);
-        JOptionPane.showMessageDialog(this, "Issued Successories Added Successfully!");
+        File file = new File("access.txt");
+        FileInputStream f = null; 
+        try
+        {
+           f=new FileInputStream(file);
+        }catch(FileNotFoundException ex)
+                {
+                   JOptionPane.showMessageDialog(this,"File doesn't exist");
+                }
+        ObjectInputStream obj = null;
+         try 
+         {
+             obj = new ObjectInputStream(f);
+         }catch(IOException ex)
+         {
+             JOptionPane.showMessageDialog(this,"error");
+         }
+         List<Accessories> list=new ArrayList<Accessories>();
+         try{
+         while(true)
+         {
+             Accessories name=null;
+            
+             try {
+                 name=(Accessories)obj.readObject();
+             } catch (ClassNotFoundException ex) {
+                 Logger.getLogger(Add_Access.class.getName()).log(Level.SEVERE, null, ex);
+             }
+            
+            list.add(name);
+         }
+         }catch(IOException ex)
+         {
+             JOptionPane.showMessageDialog(this,"ERROR");
+         }
+        try {
+            f.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Add_Access.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String i=T1.getText();
+        String n=T2.getText();
+        if(i.equals("")&&n.equals(""))
+        {
+            Accessories a=new Accessories(i,n);
+            list.add(a);
+            FileOutputStream f1=null;
+            try {
+                f1=new FileOutputStream(file);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Add_Access.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            ObjectOutputStream obj1=null;
+            try {
+                obj1=new ObjectOutputStream(f1);
+            } catch (IOException ex) {
+                Logger.getLogger(Add_Access.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try
+            {
+            for(Accessories A:list)
+            {
+                obj1.writeObject(A);
+            }
+            }catch(IOException ex)
+            {
+                Logger.getLogger(Add_Access.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                f1.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Add_Access.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        
         dispose();
     }//GEN-LAST:event_B1ActionPerformed
+
+    private void B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2ActionPerformed
+        // TODO add your handling code here:
+                java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Menu().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_B2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,22 +260,17 @@ public class Add_Access extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Add_Access().setVisible(true);
-            }
-        });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B1;
+    private javax.swing.JButton B2;
     private javax.swing.JLabel L1;
     private javax.swing.JLabel L2;
     private javax.swing.JLabel L3;
-    private javax.swing.JLabel L4;
     private javax.swing.JTextField T1;
     private javax.swing.JTextField T2;
-    private javax.swing.JTextField T3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

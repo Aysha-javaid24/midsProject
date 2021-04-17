@@ -132,6 +132,7 @@ public class logIn extends javax.swing.JFrame {
         if(name.equals("Admin")&&pwd.equals("0000"))
         {
             JOptionPane.showMessageDialog(this,"logIn successfully");
+            dispose();
             Menu menu=new Menu();
             menu.show();
         }
